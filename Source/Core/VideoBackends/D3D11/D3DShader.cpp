@@ -9,8 +9,8 @@
 #include "Common/Logging/Log.h"
 #include "Common/MsgHandler.h"
 #include "Common/StringUtil.h"
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DShader.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DShader.h"
 #include "VideoCommon/VideoConfig.h"
 
 namespace DX11

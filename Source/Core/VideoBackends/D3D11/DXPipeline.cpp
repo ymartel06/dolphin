@@ -8,13 +8,13 @@
 #include "Common/Assert.h"
 #include "Common/Logging/Log.h"
 
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/DXPipeline.h"
-#include "VideoBackends/D3D/DXShader.h"
-#include "VideoBackends/D3D/DXTexture.h"
-#include "VideoBackends/D3D/Render.h"
-#include "VideoBackends/D3D/VertexManager.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/DXPipeline.h"
+#include "VideoBackends/D3D11/DXShader.h"
+#include "VideoBackends/D3D11/DXTexture.h"
+#include "VideoBackends/D3D11/Render.h"
+#include "VideoBackends/D3D11/VertexManager.h"
 
 namespace DX11
 {

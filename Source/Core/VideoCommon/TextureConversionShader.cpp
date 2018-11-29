@@ -100,7 +100,7 @@ static void WriteHeader(char*& p, APIType ApiType)
   // D3D does not have roundEven(), only round(), which is specified "to the nearest integer".
   // This differs from the roundEven() behavior, but to get consistency across drivers in OpenGL
   // we need to use roundEven().
-  if (ApiType == APIType::D3D)
+  if (ApiType == APIType::D3D11)
     WRITE(p, "#define roundEven(x) round(x)\n");
 
   // Alpha channel in the copy is set to 1 the EFB format does not have an alpha channel.
@@ -147,7 +147,7 @@ static void WriteSampleFunction(char*& p, const EFBCopyParams& params, APIType A
     else
     {
       // Handle D3D depth inversion.
-      if (ApiType == APIType::D3D || ApiType == APIType::Vulkan)
+      if (ApiType == APIType::D3D11 || ApiType == APIType::Vulkan)
         WRITE(p, "1.0 - (");
       else
         WRITE(p, "(");

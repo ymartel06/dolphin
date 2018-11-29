@@ -10,17 +10,17 @@
 #include "Common/MsgHandler.h"
 #include "Common/StringUtil.h"
 
-#include "VideoBackends/D3D/BoundingBox.h"
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DUtil.h"
-#include "VideoBackends/D3D/GeometryShaderCache.h"
-#include "VideoBackends/D3D/PerfQuery.h"
-#include "VideoBackends/D3D/PixelShaderCache.h"
-#include "VideoBackends/D3D/Render.h"
-#include "VideoBackends/D3D/TextureCache.h"
-#include "VideoBackends/D3D/VertexManager.h"
-#include "VideoBackends/D3D/VertexShaderCache.h"
-#include "VideoBackends/D3D/VideoBackend.h"
+#include "VideoBackends/D3D11/BoundingBox.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DUtil.h"
+#include "VideoBackends/D3D11/GeometryShaderCache.h"
+#include "VideoBackends/D3D11/PerfQuery.h"
+#include "VideoBackends/D3D11/PixelShaderCache.h"
+#include "VideoBackends/D3D11/Render.h"
+#include "VideoBackends/D3D11/TextureCache.h"
+#include "VideoBackends/D3D11/VertexManager.h"
+#include "VideoBackends/D3D11/VertexShaderCache.h"
+#include "VideoBackends/D3D11/VideoBackend.h"
 
 #include "VideoCommon/ShaderCache.h"
 #include "VideoCommon/VideoCommon.h"
@@ -30,7 +30,7 @@ namespace DX11
 {
 std::string VideoBackend::GetName() const
 {
-  return "D3D";
+  return "D3D11";
 }
 
 std::string VideoBackend::GetDisplayName() const
@@ -49,7 +49,7 @@ void VideoBackend::InitBackendInfo()
     return;
   }
 
-  g_Config.backend_info.api_type = APIType::D3D;
+  g_Config.backend_info.api_type = APIType::D3D11;
   g_Config.backend_info.MaxTextureSize = D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION;
   g_Config.backend_info.bSupportsExclusiveFullscreen = true;
   g_Config.backend_info.bSupportsDualSourceBlend = true;

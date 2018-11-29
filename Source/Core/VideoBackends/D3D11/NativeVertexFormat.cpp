@@ -4,11 +4,11 @@
 
 #include <array>
 
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DBlob.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/VertexManager.h"
-#include "VideoBackends/D3D/VertexShaderCache.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DBlob.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/VertexManager.h"
+#include "VideoBackends/D3D11/VertexShaderCache.h"
 #include "VideoCommon/NativeVertexFormat.h"
 
 namespace DX11

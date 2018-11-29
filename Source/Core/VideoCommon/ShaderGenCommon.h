@@ -201,7 +201,7 @@ inline void DefineOutputMember(T& object, APIType api_type, const char* qualifie
   if (var_index != -1)
     object.Write("%d", var_index);
 
-  if (api_type == APIType::D3D && strlen(semantic) > 0)
+  if (api_type == APIType::D3D11 && strlen(semantic) > 0)
   {
     if (semantic_index != -1)
       object.Write(" : %s%d", semantic, semantic_index);

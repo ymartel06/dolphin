@@ -2,20 +2,20 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#include "VideoBackends/D3D/PSTextureEncoder.h"
+#include "VideoBackends/D3D11/PSTextureEncoder.h"
 
 #include "Common/Assert.h"
 #include "Common/Logging/Log.h"
 #include "Core/HW/Memmap.h"
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DShader.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/D3DUtil.h"
-#include "VideoBackends/D3D/DXTexture.h"
-#include "VideoBackends/D3D/FramebufferManager.h"
-#include "VideoBackends/D3D/Render.h"
-#include "VideoBackends/D3D/TextureCache.h"
-#include "VideoBackends/D3D/VertexShaderCache.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DShader.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/D3DUtil.h"
+#include "VideoBackends/D3D11/DXTexture.h"
+#include "VideoBackends/D3D11/FramebufferManager.h"
+#include "VideoBackends/D3D11/Render.h"
+#include "VideoBackends/D3D11/TextureCache.h"
+#include "VideoBackends/D3D11/VertexShaderCache.h"
 
 #include "VideoCommon/AbstractStagingTexture.h"
 #include "VideoCommon/AbstractTexture.h"
@@ -141,7 +141,7 @@ ID3D11PixelShader* PSTextureEncoder::GetEncodingPixelShader(const EFBCopyParams&
     return iter->second;
 
   D3DBlob* bytecode = nullptr;
-  const char* shader = TextureConversionShaderTiled::GenerateEncodingShader(params, APIType::D3D);
+  const char* shader = TextureConversionShaderTiled::GenerateEncodingShader(params, APIType::D3D11);
   if (!D3D::CompilePixelShader(shader, &bytecode))
   {
     PanicAlert("Failed to compile texture encoding shader.");

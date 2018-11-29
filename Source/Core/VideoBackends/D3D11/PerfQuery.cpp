@@ -2,11 +2,11 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#include "VideoBackends/D3D/PerfQuery.h"
+#include "VideoBackends/D3D11/PerfQuery.h"
 #include "Common/CommonFuncs.h"
 #include "Common/CommonTypes.h"
 #include "Common/Logging/Log.h"
-#include "VideoBackends/D3D/D3DBase.h"
+#include "VideoBackends/D3D11/D3DBase.h"
 #include "VideoCommon/RenderBase.h"
 
 namespace DX11

@@ -9,7 +9,7 @@
 #include <memory>
 #include "Common/CommonTypes.h"
 
-#include "VideoBackends/D3D/D3DBlob.h"
+#include "VideoBackends/D3D11/D3DBlob.h"
 #include "VideoCommon/AbstractShader.h"
 
 namespace DX11

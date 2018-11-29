@@ -74,7 +74,7 @@ struct TargetRectangle : public MathUtil::Rectangle<int>
 enum class APIType
 {
   OpenGL,
-  D3D,
+  D3D11,
   Vulkan,
   Nothing
 };

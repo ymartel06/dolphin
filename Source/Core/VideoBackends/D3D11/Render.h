@@ -6,7 +6,7 @@
 
 #include <d3d11.h>
 #include <string>
-#include "VideoBackends/D3D/D3DState.h"
+#include "VideoBackends/D3D11/D3DState.h"
 #include "VideoCommon/RenderBase.h"
 
 enum class EFBAccessType;

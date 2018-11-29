@@ -2,7 +2,7 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#include "VideoBackends/D3D/D3DUtil.h"
+#include "VideoBackends/D3D11/D3DUtil.h"
 
 #include <cctype>
 #include <list>
@@ -11,12 +11,12 @@
 #include "Common/Align.h"
 #include "Common/Assert.h"
 #include "Common/Logging/Log.h"
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DShader.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/GeometryShaderCache.h"
-#include "VideoBackends/D3D/PixelShaderCache.h"
-#include "VideoBackends/D3D/VertexShaderCache.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DShader.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/GeometryShaderCache.h"
+#include "VideoBackends/D3D11/PixelShaderCache.h"
+#include "VideoBackends/D3D11/VertexShaderCache.h"
 #include "VideoCommon/VideoBackendBase.h"
 
 namespace DX11

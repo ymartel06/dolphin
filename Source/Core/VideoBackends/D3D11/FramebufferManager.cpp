@@ -2,20 +2,20 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#include "VideoBackends/D3D/FramebufferManager.h"
+#include "VideoBackends/D3D11/FramebufferManager.h"
 
 #include <memory>
 #include <utility>
 
 #include "Common/CommonTypes.h"
 #include "Core/HW/Memmap.h"
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/D3DUtil.h"
-#include "VideoBackends/D3D/GeometryShaderCache.h"
-#include "VideoBackends/D3D/PixelShaderCache.h"
-#include "VideoBackends/D3D/Render.h"
-#include "VideoBackends/D3D/VertexShaderCache.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/D3DUtil.h"
+#include "VideoBackends/D3D11/GeometryShaderCache.h"
+#include "VideoBackends/D3D11/PixelShaderCache.h"
+#include "VideoBackends/D3D11/Render.h"
+#include "VideoBackends/D3D11/VertexShaderCache.h"
 #include "VideoCommon/VideoConfig.h"
 
 namespace DX11

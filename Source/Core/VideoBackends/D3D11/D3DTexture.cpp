@@ -6,8 +6,8 @@
 
 #include "Common/CommonTypes.h"
 #include "Common/MsgHandler.h"
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DTexture.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DTexture.h"
 
 namespace DX11
 {

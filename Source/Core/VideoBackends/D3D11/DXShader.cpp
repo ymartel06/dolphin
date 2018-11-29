@@ -4,9 +4,9 @@
 
 #include "Common/Assert.h"
 
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DShader.h"
-#include "VideoBackends/D3D/DXShader.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DShader.h"
+#include "VideoBackends/D3D11/DXShader.h"
 
 namespace DX11
 {

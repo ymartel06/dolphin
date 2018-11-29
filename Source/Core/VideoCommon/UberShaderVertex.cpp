@@ -320,7 +320,7 @@ void GenVertexShaderTexGens(APIType ApiType, u32 numTexgen, ShaderCode& out)
     out.Write("{ const uint texgen = 0u;\n");
   else
     out.Write("%sfor (uint texgen = 0u; texgen < %uu; texgen++) {\n",
-              ApiType == APIType::D3D ? "[loop] " : "", numTexgen);
+              ApiType == APIType::D3D11 ? "[loop] " : "", numTexgen);
 
   out.Write("  // Texcoord transforms\n");
   out.Write("  float4 coord = float4(0.0, 0.0, 1.0, 1.0);\n"

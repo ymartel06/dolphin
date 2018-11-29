@@ -6,7 +6,7 @@
 
 #include <map>
 
-#include "VideoBackends/D3D/D3DTexture.h"
+#include "VideoBackends/D3D11/D3DTexture.h"
 #include "VideoCommon/TextureCacheBase.h"
 #include "VideoCommon/TextureConverterShaderGen.h"
 

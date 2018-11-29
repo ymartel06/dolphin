@@ -12,10 +12,10 @@
 #include "Core/ConfigManager.h"
 #include "Core/Host.h"
 
-#include "VideoBackends/D3D/D3DShader.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/VertexManager.h"
-#include "VideoBackends/D3D/VertexShaderCache.h"
+#include "VideoBackends/D3D11/D3DShader.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/VertexManager.h"
+#include "VideoBackends/D3D11/VertexShaderCache.h"
 
 #include "VideoCommon/Debugger.h"
 #include "VideoCommon/Statistics.h"

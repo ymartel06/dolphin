@@ -2,7 +2,7 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#include "VideoBackends/D3D/TextureCache.h"
+#include "VideoBackends/D3D11/TextureCache.h"
 
 #include <algorithm>
 #include <memory>
@@ -10,17 +10,17 @@
 #include "Common/CommonTypes.h"
 #include "Common/Logging/Log.h"
 
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DShader.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/D3DTexture.h"
-#include "VideoBackends/D3D/D3DUtil.h"
-#include "VideoBackends/D3D/DXTexture.h"
-#include "VideoBackends/D3D/FramebufferManager.h"
-#include "VideoBackends/D3D/GeometryShaderCache.h"
-#include "VideoBackends/D3D/PSTextureEncoder.h"
-#include "VideoBackends/D3D/PixelShaderCache.h"
-#include "VideoBackends/D3D/VertexShaderCache.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DShader.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/D3DTexture.h"
+#include "VideoBackends/D3D11/D3DUtil.h"
+#include "VideoBackends/D3D11/DXTexture.h"
+#include "VideoBackends/D3D11/FramebufferManager.h"
+#include "VideoBackends/D3D11/GeometryShaderCache.h"
+#include "VideoBackends/D3D11/PSTextureEncoder.h"
+#include "VideoBackends/D3D11/PixelShaderCache.h"
+#include "VideoBackends/D3D11/VertexShaderCache.h"
 
 #include "VideoCommon/ImageWrite.h"
 #include "VideoCommon/RenderBase.h"
@@ -310,7 +310,7 @@ TextureCache::GetEFBToTexPixelShader(const TextureConversionShaderGen::TCShaderU
   if (iter != m_efb_to_tex_pixel_shaders.end())
     return iter->second;
 
-  ShaderCode code = TextureConversionShaderGen::GenerateShader(APIType::D3D, uid.GetUidData());
+  ShaderCode code = TextureConversionShaderGen::GenerateShader(APIType::D3D11, uid.GetUidData());
   ID3D11PixelShader* shader = D3D::CompileAndCreatePixelShader(code.GetBuffer());
   m_efb_to_tex_pixel_shaders.emplace(uid, shader);
   return shader;

@@ -37,7 +37,7 @@ void ClearUnusedPixelShaderUidBits(APIType ApiType, const ShaderHostConfig& host
   // OpenGL and Vulkan convert implicitly normalized color outputs to their uint representation.
   // Therefore, it is not necessary to use a uint output on these backends. We also disable the
   // uint output when logic op is not supported (i.e. driver/device does not support D3D11.1).
-  if (ApiType != APIType::D3D || !host_config.backend_logic_op)
+  if (ApiType != APIType::D3D11 || !host_config.backend_logic_op)
     uid_data->uint_output = 0;
 }
 
@@ -134,7 +134,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
   // Uniform index -> texture coordinates
   if (numTexgen > 0)
   {
-    if (ApiType != APIType::D3D)
+    if (ApiType != APIType::D3D11)
     {
       out.Write("float3 selectTexCoord(uint index) {\n");
     }
@@ -146,7 +146,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
       out.Write(") {\n");
     }
 
-    if (ApiType == APIType::D3D)
+    if (ApiType == APIType::D3D11)
     {
       out.Write("  switch (index) {\n");
       for (u32 i = 0; i < numTexgen; i++)
@@ -214,7 +214,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
     out.Write("int4 sampleTexture(uint sampler_num, float3 uv) {\n");
     if (ApiType == APIType::OpenGL || ApiType == APIType::Vulkan)
       out.Write("  return iround(texture(samp[sampler_num], uv) * 255.0);\n");
-    else if (ApiType == APIType::D3D)
+    else if (ApiType == APIType::D3D11)
       out.Write("  return iround(Tex[sampler_num].Sample(samp[sampler_num], uv) * 255.0);\n");
     out.Write("}\n\n");
   }
@@ -230,7 +230,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
     {
       if (ApiType == APIType::OpenGL || ApiType == APIType::Vulkan)
         out.Write("  case %du: return iround(texture(samp[%d], uv) * 255.0);\n", i, i);
-      else if (ApiType == APIType::D3D)
+      else if (ApiType == APIType::D3D11)
         out.Write("  case %du: return iround(Tex[%d].Sample(samp[%d], uv) * 255.0);\n", i, i, i);
     }
     out.Write("  }\n"
@@ -397,7 +397,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
   // The switch statements in these functions appear to get transformed into an if..else chain
   // on NVIDIA's OpenGL/Vulkan drivers, resulting in lower performance than the D3D counterparts.
   // Transforming the switch into a binary tree of ifs can increase performance by up to 20%.
-  if (ApiType == APIType::D3D)
+  if (ApiType == APIType::D3D11)
   {
     out.Write("// Helper function for Alpha Test\n"
               "bool alphaCompare(int a, int b, uint compare) {\n"
@@ -656,7 +656,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
   // them to the select function in D3D.
   if (numTexgen > 0)
   {
-    if (ApiType != APIType::D3D)
+    if (ApiType != APIType::D3D11)
     {
       out.Write("#define getTexCoord(index) selectTexCoord((index))\n\n");
     }
@@ -749,7 +749,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
             BitfieldExtract("bpmem_genmode", bpmem.genMode.numtevstages).c_str());
 
   out.Write("  // Main tev loop\n");
-  if (ApiType == APIType::D3D)
+  if (ApiType == APIType::D3D11)
   {
     // Tell DirectX we don't want this loop unrolled (it crashes if it tries to)
     out.Write("  [loop]\n");
@@ -1046,7 +1046,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
 
   if (host_config.fast_depth_calc)
   {
-    if (ApiType == APIType::D3D || ApiType == APIType::Vulkan)
+    if (ApiType == APIType::D3D11 || ApiType == APIType::Vulkan)
       out.Write("  int zCoord = int((1.0 - rawpos.z) * 16777216.0);\n");
     else
       out.Write("  int zCoord = int(rawpos.z * 16777216.0);\n");
@@ -1101,7 +1101,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
     out.Write("  // If early depth is enabled, write to zbuffer before depth textures\n");
     out.Write("  // If early depth isn't enabled, we write to the zbuffer here\n");
     out.Write("  int zbuffer_zCoord = bpmem_late_ztest ? zCoord : early_zCoord;\n");
-    if (ApiType == APIType::D3D || ApiType == APIType::Vulkan)
+    if (ApiType == APIType::D3D11 || ApiType == APIType::Vulkan)
       out.Write("  depth = 1.0 - float(zbuffer_zCoord) / 16777216.0;\n");
     else
       out.Write("  depth = float(zbuffer_zCoord) / 16777216.0;\n");
@@ -1206,7 +1206,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
             "\n");
 
   // D3D requires that the shader outputs be uint when writing to a uint render target for logic op.
-  if (ApiType == APIType::D3D && uid_data->uint_output)
+  if (ApiType == APIType::D3D11 && uid_data->uint_output)
   {
     out.Write("  if (bpmem_rgba6_format)\n"
               "    ocol0 = uint4(TevResult & 0xFC);\n"

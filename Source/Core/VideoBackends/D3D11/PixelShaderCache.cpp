@@ -12,10 +12,10 @@
 #include "Core/ConfigManager.h"
 #include "Core/Host.h"
 
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DShader.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/PixelShaderCache.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DShader.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/PixelShaderCache.h"
 
 #include "VideoCommon/Debugger.h"
 #include "VideoCommon/PixelShaderGen.h"

@@ -9,7 +9,7 @@
 #include <utility>
 
 #include "Common/CommonTypes.h"
-#include "VideoBackends/D3D/D3DTexture.h"
+#include "VideoBackends/D3D11/D3DTexture.h"
 #include "VideoCommon/FramebufferManagerBase.h"
 
 namespace DX11

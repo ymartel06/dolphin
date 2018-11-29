@@ -9,11 +9,11 @@
 
 #include "Core/ConfigManager.h"
 
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DShader.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/FramebufferManager.h"
-#include "VideoBackends/D3D/GeometryShaderCache.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DShader.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/FramebufferManager.h"
+#include "VideoBackends/D3D11/GeometryShaderCache.h"
 
 #include "VideoCommon/Debugger.h"
 #include "VideoCommon/GeometryShaderGen.h"

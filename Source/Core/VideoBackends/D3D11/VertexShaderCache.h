@@ -6,8 +6,8 @@
 
 #include <map>
 
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DBlob.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DBlob.h"
 
 #include "VideoCommon/AsyncShaderCompiler.h"
 #include "VideoCommon/UberShaderVertex.h"

@@ -2,7 +2,7 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#include "VideoBackends/D3D/Render.h"
+#include "VideoBackends/D3D11/Render.h"
 
 #include <array>
 #include <cinttypes>
@@ -20,18 +20,18 @@
 
 #include "Core/Core.h"
 
-#include "VideoBackends/D3D/BoundingBox.h"
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/D3DUtil.h"
-#include "VideoBackends/D3D/DXPipeline.h"
-#include "VideoBackends/D3D/DXShader.h"
-#include "VideoBackends/D3D/DXTexture.h"
-#include "VideoBackends/D3D/FramebufferManager.h"
-#include "VideoBackends/D3D/GeometryShaderCache.h"
-#include "VideoBackends/D3D/PixelShaderCache.h"
-#include "VideoBackends/D3D/TextureCache.h"
-#include "VideoBackends/D3D/VertexShaderCache.h"
+#include "VideoBackends/D3D11/BoundingBox.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/D3DUtil.h"
+#include "VideoBackends/D3D11/DXPipeline.h"
+#include "VideoBackends/D3D11/DXShader.h"
+#include "VideoBackends/D3D11/DXTexture.h"
+#include "VideoBackends/D3D11/FramebufferManager.h"
+#include "VideoBackends/D3D11/GeometryShaderCache.h"
+#include "VideoBackends/D3D11/PixelShaderCache.h"
+#include "VideoBackends/D3D11/TextureCache.h"
+#include "VideoBackends/D3D11/VertexShaderCache.h"
 
 #include "VideoCommon/BPFunctions.h"
 #include "VideoCommon/OnScreenDisplay.h"

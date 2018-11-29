@@ -10,9 +10,9 @@
 #include "Common/StringUtil.h"
 #include "Core/Config/GraphicsSettings.h"
 #include "Core/ConfigManager.h"
-#include "VideoBackends/D3D/D3DBase.h"
-#include "VideoBackends/D3D/D3DState.h"
-#include "VideoBackends/D3D/D3DTexture.h"
+#include "VideoBackends/D3D11/D3DBase.h"
+#include "VideoBackends/D3D11/D3DState.h"
+#include "VideoBackends/D3D11/D3DTexture.h"
 #include "VideoCommon/VideoConfig.h"
 
 namespace DX11

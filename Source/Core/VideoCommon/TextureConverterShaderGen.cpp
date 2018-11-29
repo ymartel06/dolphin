@@ -72,7 +72,7 @@ ShaderCode GenerateShader(APIType api_type, const UidData* uid_data)
               "layout(location = 0) out vec4 ocol0;"
               "void main(){\n");
   }
-  else if (api_type == APIType::D3D)
+  else if (api_type == APIType::D3D11)
   {
     out.Write("Texture2DArray tex0 : register(t0);\n"
               "SamplerState samp0 : register(s0);\n"
@@ -112,7 +112,7 @@ ShaderCode GenerateShader(APIType api_type, const UidData* uid_data)
 
   if (uid_data->is_depth_copy)
   {
-    if (api_type == APIType::D3D || api_type == APIType::Vulkan)
+    if (api_type == APIType::D3D11 || api_type == APIType::Vulkan)
       out.Write("texcol.x = 1.0 - texcol.x;\n");
 
     out.Write("  int depth = int(texcol.x * 16777216.0);\n"

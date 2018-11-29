@@ -20,7 +20,7 @@
 
 // TODO: ugly
 #ifdef _WIN32
-#include "VideoBackends/D3D/VideoBackend.h"
+#include "VideoBackends/D3D11/VideoBackend.h"
 #endif
 #include "VideoBackends/Null/VideoBackend.h"
 #include "VideoBackends/OGL/VideoBackend.h"
