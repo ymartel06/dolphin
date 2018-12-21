@@ -19,4 +19,4 @@ class VideoBackend : public VideoBackendBase
 
   void InitBackendInfo() override;
 };
-}  // namespace DX11
+}  // namespace DX12

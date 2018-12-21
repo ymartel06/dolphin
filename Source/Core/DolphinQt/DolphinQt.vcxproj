@@ -440,6 +440,9 @@
     <ProjectReference Include="$(CoreDir)VideoBackends\D3D11\D3D11.vcxproj">
       <Project>{96020103-4ba5-4fd2-b4aa-5b6d24492d4e}</Project>
     </ProjectReference>
+    <ProjectReference Include="$(CoreDir)VideoBackends\D3D12\D3D12.vcxproj">
+      <Project>{cf8490ab-fc12-4667-9270-44a57c4547e5}</Project>
+    </ProjectReference>
     <ProjectReference Include="$(CoreDir)VideoBackends\OGL\OGL.vcxproj">
       <Project>{ec1a314c-5588-4506-9c1e-2e58e5817f75}</Project>
     </ProjectReference>
