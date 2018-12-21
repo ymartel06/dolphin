@@ -1240,7 +1240,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
   if (bounding_box)
   {
     out.Write("  if (bpmem_bounding_box) {\n");
-    if (ApiType == APIType::D3D)
+    if (ApiType == APIType::D3D11)
     {
       out.Write(
           "    if(bbox_data[0] > int(rawpos.x)) InterlockedMin(bbox_data[0], int(rawpos.x));\n"

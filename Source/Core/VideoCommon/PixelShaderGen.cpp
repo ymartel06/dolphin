@@ -853,7 +853,7 @@ ShaderCode GeneratePixelShaderCode(APIType ApiType, const ShaderHostConfig& host
 
   if (uid_data->bounding_box)
   {
-    if (ApiType == APIType::D3D)
+    if (ApiType == APIType::D3D11)
     {
       out.Write(
           "\tif(bbox_data[0] > int(rawpos.x)) InterlockedMin(bbox_data[0], int(rawpos.x));\n"
