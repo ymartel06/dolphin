@@ -1,5 +1,7 @@
 add_library(videod3d
   main.cpp
+  Render.cpp
+  Render.h
   VideoBackend.h
 )
 

@@ -37,8 +37,10 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Render.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Render.h" />
     <ClInclude Include="VideoBackend.h" />
   </ItemGroup>
   <ItemGroup>
