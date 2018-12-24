@@ -51,5 +51,9 @@ private:
 
   Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_rtv_heap;
   Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_dsv_heap;
+
+	D3D_DRIVER_TYPE m_d3d_driver_type = D3D_DRIVER_TYPE_HARDWARE;
+  DXGI_FORMAT m_back_buffer_format = DXGI_FORMAT_R8G8B8A8_UNORM;
+  DXGI_FORMAT m_depth_stencil_format = DXGI_FORMAT_D24_UNORM_S8_UINT;
 };
 }  // namespace DX12

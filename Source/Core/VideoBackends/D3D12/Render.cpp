@@ -54,6 +54,29 @@ void Renderer::CreateCommandObjects()
 
 void Renderer::CreateSwapChain()
 {
+  // Release the previous swapchain we will be recreating.
+  m_swap_chain.Reset();
+
+  DXGI_SWAP_CHAIN_DESC sd;
+  sd.BufferDesc.Width = m_backbuffer_width;
+  sd.BufferDesc.Height = m_backbuffer_height;
+  sd.BufferDesc.RefreshRate.Numerator = 60;
+  sd.BufferDesc.RefreshRate.Denominator = 1;
+  sd.BufferDesc.Format = m_back_buffer_format;
+  sd.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
+  sd.BufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
+  sd.SampleDesc.Count = 1; // TODO: init MSAA here
+  sd.SampleDesc.Quality = 0; // TODO: init MSAA here
+  sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+  sd.BufferCount = SwapChainBufferCount;
+  // if (FAILED(D3D::Create(reinterpret_cast<HWND>(wsi.render_surface))))
+  sd.OutputWindow = mhMainWnd; 
+  sd.Windowed = true;
+  sd.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
+  sd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
+
+  // Note: Swap chain uses queue to perform flush.
+  ThrowIfFailed(m_dxgi_factory->CreateSwapChain(m_command_queue.Get(), &sd, m_swap_chain.GetAddressOf()));
 }
 
 bool Renderer::InitDirect3D()
