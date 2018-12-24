@@ -47,6 +47,7 @@
     <ClCompile Include="Render.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="D3DUtil.h" />
     <ClInclude Include="Render.h" />
     <ClInclude Include="VideoBackend.h" />
   </ItemGroup>

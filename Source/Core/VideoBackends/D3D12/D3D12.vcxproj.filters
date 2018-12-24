@@ -19,5 +19,8 @@
     <ClInclude Include="Render.h">
       <Filter>Render</Filter>
     </ClInclude>
+    <ClInclude Include="D3DUtil.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

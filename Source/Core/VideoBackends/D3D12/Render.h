@@ -33,7 +33,7 @@ private:
   bool InitDirect3D();
 
   ComPtr<IDXGIFactory4> m_dxgi_factory;
-  /*
+
   Microsoft::WRL::ComPtr<IDXGISwapChain> m_swap_chain;
   Microsoft::WRL::ComPtr<ID3D12Device> m_d3d_device;
 
@@ -51,6 +51,5 @@ private:
 
   Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_rtv_heap;
   Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_dsv_heap;
-  */
 };
 }  // namespace DX12
